@@ -1,0 +1,51 @@
+header:
+  version: 2
+
+machine:  iot2000
+
+repos:
+  meta-iot2000:
+    layers:
+      meta-iot2000-bsp:
+
+  poky:
+    url: https://git.yoctoproject.org/git/poky
+    refspec: 2dd610cc27c606f731f83047b4766787aab6e6b2
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+  meta-efibootguard:
+    url: https://github.com/siemens/meta-efibootguard
+    refspec: a703d073f02bcb7c537a74debd7437b4261e0816
+
+  meta-openembedded:
+    url: http://git.openembedded.org/meta-openembedded
+    refspec: 9b3b907f30b0d5b92d58c7e68289184fda733d3e
+    layers:
+      meta-oe:
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+
+local_conf_header:
+  standard: |
+    CONF_VERSION = "1"
+
+  debug-tweaks: |
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+
+  diskmon: |
+    BB_DISKMON_DIRS = "\
+        STOPTASKS,${TMPDIR},1G,100K \
+        STOPTASKS,${DL_DIR},1G,100K \
+        STOPTASKS,${SSTATE_DIR},1G,100K \
+        STOPTASKS,/tmp,100M,100K \
+        ABORT,${TMPDIR},100M,1K \
+        ABORT,${DL_DIR},100M,1K \
+        ABORT,${SSTATE_DIR},100M,1K \
+        ABORT,/tmp,10M,1K"
