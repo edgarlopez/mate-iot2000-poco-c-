@@ -1,4 +1,4 @@
-# Meta-iot2000 With Poco C++ Framework
+# meta-iot2000 with ooco c++ framework
 POCO C++ SIMATIC IOT2000 Yocto Board Support Package
 
 
