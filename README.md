@@ -63,27 +63,27 @@ Clone the meta-iot2000 repository (or unpack an archive of it) into a work
 directory:
 
 ```shell
-$ git clone https://github.com/edgarlopez/meta-iot2000
+$ git clone https://github.com/edgarlopez/meta-iot2000-Poco-Framework
 ```
 
 Now you can build the example image like this:
 
 ```shell
-$ kas build meta-iot2000/kas-example.yml
+$ kas build meta-iot2000-Poco-Framework/kas-example.yml
 ```
 
 To build the BSP image instead, just specify the corresponding configuration
 file instead:
 
 ```shell
-$ kas build meta-iot2000/kas-bsp.yml
+$ kas build meta-iot2000-Poco-Framework/kas-bsp.yml
 ```
 
 You can also reproduce the Windows or Linux SDK this way:
 
 ```shell
-$ kas build meta-iot2000/kas-sdk-windows-i586.yml
-$ kas build meta-iot2000/kas-sdk-linux-x64.yml
+$ kas build meta-iot2000-Poco-Framework/kas-sdk-windows-i586.yml
+$ kas build meta-iot2000-Poco-Framework/kas-sdk-linux-x64.yml
 ```
 
 Booting the Image from SD card
